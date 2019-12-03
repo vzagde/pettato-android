@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.huzaifrangila.pettato" version="6.5.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="10">
+    <name>Pettato</name>
+    <description>
+        The app covers the dynamic aspects of social profile,pet profile,promote your business by creating your business profile,pet adoption with a twist where you can search for pets and people looking for pets, pet mating and dating, lost and found service, ambulance data and cemetery details just so you spend more time cuddling your pet rather than scouring this information from different sources. So hop on to the bandwagon and show your love out loud to the pet fam and enjoy great companionship for life.
+    </description>
+    <author email="pettatoo@gmail.com" href="http://pettato.com">
+        Pettato Enterprise LLP
+    </author>
+    <content src="index.html" />
+    <preference name='phonegap-version' value='cli-7.0.1' />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="15" />
+    <preference name="android-targetSdkVersion" value="26"/>
+    <preference name="orientation" value="portrait" />
+    <icon src="app_icon.png" />
+    <platform name="android">
+        <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+        <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+        <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+        <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
+        <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
+        <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
+        <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
+        <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+        <splash density="land-hdpi" src="www/res/screen/android/drawable-land-hdpi-screen.png" />
+        <splash density="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
+        <splash density="land-mdpi" src="www/res/screen/android/drawable-land-mdpi-screen.png" />
+        <splash density="land-xhdpi" src="www/res/screen/android/drawable-land-xhdpi-screen.png" />
+        <splash density="land-xxhdpi" src="www/res/screen/android/drawable-land-xxhdpi-screen.png" />
+        <splash density="land-xxxhdpi" src="www/res/screen/android/drawable-land-xxxhdpi-screen.png" />
+    </platform>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="http://pettato.com/*/*" />
+    <allow-intent href="https://pettato.com/*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-battery-status" spec="~1.1.1" />
+    <plugin name="cordova-plugin-camera" source="npm" spec="~2.4.1">
+        <key>NSCameraUsageDescription</key>
+        <string>need camera access to take pictures</string>
+    </plugin>
+    <plugin name="cordova-plugin-media-capture" spec="~1.2.0">
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Photo Library Access Warning</string>
+        <key>NSCameraUsageDescription</key>
+        <string>need camera access to take pictures</string>
+    </plugin>
+    <plugin name="cordova-plugin-console" spec="~1.0.2" />
+    <plugin name="cordova-plugin-contacts" spec="~2.0.1" />
+    <plugin name="cordova-plugin-device" spec="~1.1.1" />
+    <plugin name="cordova-plugin-device-motion" spec="~1.2.0" />
+    <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
+    <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~4.3.3">
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Photo Library Access Warning</string>
+    </plugin>
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="1.3.0">
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Photo Library Access Warning</string>
+    </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="~2.1.0" />
+    <plugin name="cordova-plugin-globalization" spec="~1.0.3" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.3.0" />
+    <plugin name="cordova-plugin-media" spec="~2.2.0">
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Photo Library Access Warning</string>
+    </plugin>
+    <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~3.2.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
+    <plugin name="cordova-plugin-vibration" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
+    <plugin name="cordova-plugin-crop" spec="~0.3.1">
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Photo Library Access Warning</string>
+    </plugin>
+    <plugin name="cordova-plugin-x-socialsharing" spec="5.4.0" />
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+    </feature>
+    <plugin name="cordova-plugin-background-service" spec="1.3.5" />
+    <plugin name="cordova-plugin-intent" spec="0.1.2" />
+    <platform name="android">
+        <preference name="AndroidLaunchMode" value="singleTask"/>
+    </platform>
+    <platform name="android">
+        <resource-file src="google-services.json" target="google-services.json" />
+    </platform>
+    <plugin name="phonegap-plugin-push" spec="1.10.5">
+        <variable name="SENDER_ID" value="836033005549" />
+    </plugin>
+</widget>
