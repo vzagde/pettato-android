@@ -216,5 +216,13 @@
     "variables": {
       "SENDER_ID": "836033005549"
     }
+  },
+  "com.napolitano.cordova.plugin.intent": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-intent@0.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
