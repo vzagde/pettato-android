@@ -104,7 +104,7 @@
     <platform name="android">
         <resource-file src="google-services.json" target="google-services.json" />
     </platform>
-    <plugin name="phonegap-plugin-push" spec="2.2.0">
+    <plugin name="phonegap-plugin-push" source="npm" >
         <variable name="SENDER_ID" value="836033005549" />
     </plugin>
 </widget>
