@@ -101,10 +101,10 @@
     <platform name="android">
         <preference name="AndroidLaunchMode" value="singleTask"/>
     </platform>
-    <!-- <platform name="android">
-    </platform> -->
-    <plugin name="phonegap-plugin-push" source="npm" >
+    <platform name="android">
+        <resource-file src="google-services.json" target="../pettato_android/google-services.json" />
+    </platform>
+    <plugin name="phonegap-plugin-push" spec="^2.0.0" />
         <variable name="SENDER_ID" value="836033005549" />
-        <resource-file src="google-services.json" target="google-services.json" />
     </plugin>
 </widget>
