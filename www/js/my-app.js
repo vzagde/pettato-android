@@ -1,5 +1,5 @@
-var base_url = 'http://pettato.com/index.php/api/';
-var image_url = 'http://pettato.com/assets/uploads/upload_image/';
+var base_url = 'https://pettato.com/index.php/api/';
+var image_url = 'https://pettato.com/assets/uploads/upload_image/';
 
 var token = Lockr.get('token');
 var oldPushId = '';
