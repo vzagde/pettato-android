@@ -594,7 +594,7 @@ function shopper_register_onSuccess_direct_edit(fileURL) {
 }
 
 function onCropSuccess(fileURL) {
-    var uri = encodeURI(base_url + "upload_user");
+    var uri = encodeURI("http://pettato.com/index.php/api/upload_user");
     var options = new FileUploadOptions();
     options.fileKey = "file";
     options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
@@ -612,7 +612,7 @@ function onCropSuccess(fileURL) {
 }
 
 function onCropSuccess_direct_edit(fileURL) {
-    var uri = encodeURI(base_url + "upload_user");
+    var uri = encodeURI("http://pettato.com/index.php/api/upload_user");
     var options = new FileUploadOptions();
     options.fileKey = "file";
     options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
