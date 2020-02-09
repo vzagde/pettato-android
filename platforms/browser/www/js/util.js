@@ -28,58 +28,58 @@ function onDeviceReady() {
 
     // Code to Uncomment
 
-    var push = PushNotification.init({
-        "android": {
-            "senderID": "836033005549"
-        },
-        "browser": {},
-        "ios": {
-            "sound": true,
-            "vibration": true,
-            "badge": true
-        },
-        "windows": {}
-    });
+    // var push = PushNotification.init({
+    //     "android": {
+    //         "senderID": "836033005549"
+    //     },
+    //     "browser": {},
+    //     "ios": {
+    //         "sound": true,
+    //         "vibration": true,
+    //         "badge": true
+    //     },
+    //     "windows": {}
+    // });
 
-    push.on('registration', function(data) {
-        oldPushId = Lockr.get('push_key');
-        if (oldPushId !== data.registrationId) {
-            Lockr.set('push_key', data.registrationId);
-        }
-    });
+    // push.on('registration', function(data) {
+    //     oldPushId = Lockr.get('push_key');
+    //     if (oldPushId !== data.registrationId) {
+    //         Lockr.set('push_key', data.registrationId);
+    //     }
+    // });
 
-    push.on('error', function(e) {
-        console.log(e);
-    });
+    // push.on('error', function(e) {
+    //     console.log(e);
+    // });
 
-    push.on('notification', function(data) {
-        console.log(data);
-        if (!data.additionalData.foreground) {
-            if (data.additionalData.notification_for == 'Profile') {
-                if (data.additionalData.related_user_id == token.id) {
-                    goto_profile();
-                } else {
-                    goto_user_page(data.additionalData.feed_id);
-                }
-            } else if (data.additionalData.notification_for == 'Feed') {
-                load_feed_page(data.additionalData.feed_id);
-            } else if (data.additionalData.notification_for == 'Become Parent') {
-                goto_becomeParentDetails(data.additionalData.feed_id);
-            } else if (data.additionalData.notification_for == 'Find Parent') {
-                goto_chat_inner(data.additionalData.user_id);
-            } else if (data.additionalData.notification_for == 'Business Profile') {
-                goto_business_page(data.additionalData.feed_id);
-            } else if (data.additionalData.notification_for == 'Pet Profile') {
-                goto_profile_shopper_pet(data.additionalData.feed_id);
-            } else if (data.additionalData.notification_for == 'Lost and Found') {
-                goto_chat_inner(data.additionalData.user_id);
-            } else if (data.additionalData.notification_for == 'Mating') {
-                goto_chat_inner(data.additionalData.user_id);
-            } else if (data.additionalData.notification_for == 'Adoption') {
-                goto_chat_inner(data.additionalData.user_id);
-            }
-        }
-    });
+    // push.on('notification', function(data) {
+    //     console.log(data);
+    //     if (!data.additionalData.foreground) {
+    //         if (data.additionalData.notification_for == 'Profile') {
+    //             if (data.additionalData.related_user_id == token.id) {
+    //                 goto_profile();
+    //             } else {
+    //                 goto_user_page(data.additionalData.feed_id);
+    //             }
+    //         } else if (data.additionalData.notification_for == 'Feed') {
+    //             load_feed_page(data.additionalData.feed_id);
+    //         } else if (data.additionalData.notification_for == 'Become Parent') {
+    //             goto_becomeParentDetails(data.additionalData.feed_id);
+    //         } else if (data.additionalData.notification_for == 'Find Parent') {
+    //             goto_chat_inner(data.additionalData.user_id);
+    //         } else if (data.additionalData.notification_for == 'Business Profile') {
+    //             goto_business_page(data.additionalData.feed_id);
+    //         } else if (data.additionalData.notification_for == 'Pet Profile') {
+    //             goto_profile_shopper_pet(data.additionalData.feed_id);
+    //         } else if (data.additionalData.notification_for == 'Lost and Found') {
+    //             goto_chat_inner(data.additionalData.user_id);
+    //         } else if (data.additionalData.notification_for == 'Mating') {
+    //             goto_chat_inner(data.additionalData.user_id);
+    //         } else if (data.additionalData.notification_for == 'Adoption') {
+    //             goto_chat_inner(data.additionalData.user_id);
+    //         }
+    //     }
+    // });
 
     // Code to Uncomment
 
@@ -616,6 +616,9 @@ function onCropSuccess_direct_edit(fileURL) {
         'headerParam': 'headerValue'
     };
     options.headers = headers;
+
+    console.log(fileURL+', '+uri+', '+options);
+
     new FileTransfer().upload(fileURL, uri, shopper_register_onSuccess_file_direct_edit, shopper_register_onError_file, options);
 }
 
@@ -691,6 +694,7 @@ function shopper_register_onSuccess_file_direct_edit(res) {
 
 // image upload fail function
 function shopper_register_onError_file(error) {
+    console.log(error);
     myApp.hidePreloader();
     myApp.alert("Some Error Occured While image upload please try again");
 }

@@ -616,6 +616,9 @@ function onCropSuccess_direct_edit(fileURL) {
         'headerParam': 'headerValue'
     };
     options.headers = headers;
+
+    console.log(fileURL+', '+uri+', '+options);
+
     new FileTransfer().upload(fileURL, uri, shopper_register_onSuccess_file_direct_edit, shopper_register_onError_file, options);
 }
 
@@ -691,6 +694,7 @@ function shopper_register_onSuccess_file_direct_edit(res) {
 
 // image upload fail function
 function shopper_register_onError_file(error) {
+    console.log(error);
     myApp.hidePreloader();
     myApp.alert("Some Error Occured While image upload please try again");
 }
