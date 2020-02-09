@@ -603,6 +603,11 @@ function onCropSuccess(fileURL) {
         'headerParam': 'headerValue'
     };
     options.headers = headers;
+
+    console.log(fileURL);
+    console.log(uri);
+    console.log(options);
+
     new FileTransfer().upload(fileURL, uri, shopper_register_onSuccess_file, shopper_register_onError_file, options);
 }
 
