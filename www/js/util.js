@@ -599,6 +599,8 @@ function onCropSuccess(fileURL) {
     options.fileKey = "file";
     options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
+    options.httpMethod = 'POST';
+    options.trustAllHosts = true;
     var headers = {
         'headerParam': 'headerValue'
     };
@@ -617,6 +619,8 @@ function onCropSuccess_direct_edit(fileURL) {
     options.fileKey = "file";
     options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
+    options.httpMethod = 'POST';
+    options.trustAllHosts = true;
     var headers = {
         'headerParam': 'headerValue'
     };
