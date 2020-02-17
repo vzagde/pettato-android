@@ -88,7 +88,8 @@
     <plugin name="cordova-plugin-vibration" spec="~2.1.0" />
     <!-- <plugin name="cordova-plugin-whitelist" spec="~1.2.1" /> -->
     <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
-    <plugin name="cordova-plugin-crop" spec="1.0.3">
+    <!-- <plugin name="cordova-plugin-crop" spec="1.0.3"> -->
+    <plugin name="cordova-plugin-crop" source="https://github.com/jeduan/cordova-plugin-crop.git">
         <key>NSPhotoLibraryUsageDescription</key>
         <string>Photo Library Access Warning</string>
     </plugin>
