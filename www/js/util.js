@@ -6,6 +6,21 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     myApp.showIndicator();
+    document.addEventListener("backbutton", function(e) {
+        e.preventDefault();
+        var page = myApp.getCurrentView().activePage;
+        image_from_device = '';
+        console.log(page.name);
+        if (page.name == "feeds" || page.name == "index") {
+            myApp.confirm('Are you sure you want to exit the app?', function() {
+                navigator.app.clearHistory();
+                navigator.app.exitApp();
+            });
+        } else {
+            console.log("Back Button Triggered");
+            mainView.router.back({});
+        }
+    }, false);
     // StatusBar.overlaysWebView(false);
     // StatusBar.backgroundColorByHexString('#3399FF');
     // StatusBar.styleLightContent();
@@ -183,23 +198,6 @@ function onDeviceReady() {
             });
         }
     }
-
-    document.addEventListener("backbutton", function(e) {
-        e.preventDefault();
-        var page = myApp.getCurrentView().activePage;
-        myApp.hideIndicator();
-        image_from_device = '';
-        console.log(page.name);
-        if (page.name == "feeds" || page.name == "index") {
-            myApp.confirm('Are you sure you want to exit the app?', function() {
-                navigator.app.clearHistory();
-                navigator.app.exitApp();
-            });
-        } else {
-            console.log("Back Button Triggered");
-            mainView.router.back({});
-        }
-    }, false);
 }
 
 function j2s(json) {
