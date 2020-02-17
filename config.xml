@@ -83,6 +83,7 @@
         <string>Photo Library Access Warning</string>
     </plugin>
     <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
+    <plugin spec="https://github.com/prageeth/cordova-plugin-splashscreen" name="git" />
     <plugin name="cordova-plugin-splashscreen" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" spec="~2.1.0" />
