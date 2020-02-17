@@ -585,14 +585,14 @@ function image_gallery_direct_edit() {
 
 // image selection success function
 function shopper_register_onSuccess(fileURL) {
-    // plugins.crop(onCropSuccess, onCropfail, fileURL, { quality: 100, targetWidth: 1000, targetHeight: 1000 });
-    onCropSuccess();
+    plugins.crop(onCropSuccess, onCropfail, fileURL, { quality: 100, targetWidth: 1000, targetHeight: 1000 });
+    // onCropSuccess();
 }
 
 // image selection success function
 function shopper_register_onSuccess_direct_edit(fileURL) {
-    // plugins.crop(onCropSuccess_direct_edit, onCropfail, fileURL, { quality: 100, targetWidth: 1000, targetHeight: 1000 });
-    onCropSuccess_direct_edit();
+    plugins.crop(onCropSuccess_direct_edit, onCropfail, fileURL, { quality: 100, targetWidth: 1000, targetHeight: 1000 });
+    // onCropSuccess_direct_edit();
 }
 
 function onCropSuccess(fileURL) {
