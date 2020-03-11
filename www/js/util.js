@@ -2143,6 +2143,21 @@ function loadFeedsDetails() {
             $(".feed_desc").html(decodeURI(res.response.feeds_content));
             // $("#feedDetailsMessagesContainer").html('');
 
+            // if (value.user_id == token.id) {
+            //     if (value.record_type == 'feeds') {
+            //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+            //     } else if (value.record_type == 'abuses') {
+            //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+            //     }
+            // }
+
+            $(".feedDetailsDelete").remove();
+
+            if (res.response.user_id == token.id || res.response.linked_acc_id == token.id) {
+                var appendDelete = '<a href="#" class="feedDetailsDelete" data-feed_id="" onclick="delete_feed('+res.response.feed_id+');"><i class="material-icons color_8ac640">delete</i></a>';
+                $("#appendDelete").append(appendDelete);
+            }
+
             var comments = '';
 
             $.each(res.comments_response, function(index, value){
@@ -2430,13 +2445,13 @@ function loadUsersSubPageContent(user_id) {
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 40%;">'+
                                 '<a href="javascript:void(0);" data-liked="0" class=""><i onclick="feedShareStatusChng('+value.id+')" data-title="'+title+'" data-image_link="'+share_image_link+'" class="material-icons white_heart share_feeds_'+value.id+'">share</i></a>';
-                                if (value.user_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })
@@ -2600,13 +2615,13 @@ function loadUsersPageContent(user_id) {
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 40%;">';
                                 // '<a href="javascript:void(0);" data-liked="0" class=""><i onclick="feedShareStatusChng('+value.id+')" data-title="'+title+'" data-image_link="'+share_image_link+'" class="material-icons white_heart share_feeds_'+value.id+'">share</i></a>';
-                                if (value.user_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })
@@ -2903,9 +2918,9 @@ function loadBusinessPageContent(user_id) {
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 40%;">'+
                                 '<a href="javascript:void(0);" data-liked="0" onclick="window.plugins.socialsharing.share("'+title+'", "'+title+'", "'+share_image_link+'", "'+share_link+'")" class=""><i class="material-icons white_heart">share</i></a>';
-                                if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
-                                    feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                }
+                                // if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
+                                //     feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                // }
                 feeds_html += '</div>'+
                                 '</div>';
             })
@@ -3060,9 +3075,9 @@ function loadBusinessPageContentSub(user_id) {
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 40%;">'+
                                 '<a href="javascript:void(0);" data-liked="0" onclick="window.plugins.socialsharing.share("'+title+'", "'+title+'", "'+share_image_link+'", "'+share_link+'")" class=""><i class="material-icons white_heart">share</i></a>';
-                                if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
-                                    feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                }
+                                // if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
+                                //     feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                // }
                 feeds_html += '</div>'+
                                 '</div>';
 
@@ -5668,13 +5683,13 @@ function loadProfileUserContent(user_id) {
                                 '<img data-src="'+image_url+value.image+'" src="'+image_url+value.image+'" width="100%" class="lazy lazy-fadein">'+
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 20%;">';
-                                if (value.user_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })
@@ -5830,13 +5845,13 @@ function loadProfileUserSubContent(user_id) {
                                 '<img data-src="'+image_url+value.image+'" src="'+image_url+value.image+'" width="100%" class="lazy lazy-fadein">'+
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 20%;">';
-                                if (value.user_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })
@@ -5984,13 +5999,13 @@ function loadProfileBusinessContent(user_id) {
                                 '<img data-src="'+image_url+value.image+'" src="'+image_url+value.image+'" width="100%" class="lazy lazy-fadein">'+
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 20%;">';
-                                if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id || res.response.user_details.linked_acc_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })
@@ -6127,13 +6142,13 @@ function loadProfileBusinessSubContent(user_id) {
                                 '<img data-src="'+image_url+value.image+'" src="'+image_url+value.image+'" width="100%" class="lazy lazy-fadein">'+
                                 '</a>'+
                                 '<div class="card-footer no-border like_share pad0" style="width: 20%;">';
-                                if (value.user_id == token.id) {
-                                    if (value.record_type == 'feeds') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    } else if (value.record_type == 'abuses') {
-                                        feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
-                                    }
-                                }
+                                // if (value.user_id == token.id) {
+                                //     if (value.record_type == 'feeds') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_feed('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     } else if (value.record_type == 'abuses') {
+                                //         feeds_html += '<a href="javascript:void(0);" data-liked="0" onclick="delete_abuse('+value.id+')" class=""><i class="material-icons white_heart">delete</i></a>';
+                                //     }
+                                // }
                 feeds_html +='</div>'+
                         '</div>';
             })

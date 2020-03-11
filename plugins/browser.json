@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "com.napolitano.cordova.plugin.intent": {
+      "PACKAGE_NAME": "com.huzaifrangila.pettato"
+    },
     "cordova-plugin-background-service": {
       "PACKAGE_NAME": "com.huzaifrangila.pettato"
     },
@@ -75,9 +78,6 @@
     },
     "phonegap-plugin-push": {
       "SENDER_ID": "836033005549",
-      "PACKAGE_NAME": "com.huzaifrangila.pettato"
-    },
-    "com.napolitano.cordova.plugin.intent": {
       "PACKAGE_NAME": "com.huzaifrangila.pettato"
     }
   },
